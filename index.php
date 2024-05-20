@@ -7,7 +7,7 @@ require_once BASE_PATH . 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(BASE_PATH, '.env'); 
+$dotenv = Dotenv::createImmutable(__DIR__); 
 $dotenv->load();
 
 require_once BASE_PATH . 'src/orm/bootstrap.php';
