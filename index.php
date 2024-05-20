@@ -7,14 +7,12 @@ require_once BASE_PATH . 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(BASE_PATH);
+$dotenv = Dotenv::createImmutable(BASE_PATH, '.env'); 
 $dotenv->load();
 
-
-require_once 'src/orm/bootstrap.php';
+require_once BASE_PATH . 'src/orm/bootstrap.php';
 // routes
-require_once 'src/routes/user.route.php';
-require_once 'src/routes/login.route.php';
-
+require_once BASE_PATH . 'src/routes/user.route.php';
+require_once BASE_PATH . 'src/routes/login.route.php';
 
 Flight::start();
