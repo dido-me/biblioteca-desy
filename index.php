@@ -14,5 +14,9 @@ require_once BASE_PATH . 'src/orm/bootstrap.php';
 require_once BASE_PATH . 'src/routes/user.route.php';
 require_once BASE_PATH . 'src/routes/login.route.php';
 
+// Painga de inicio
+Flight::route('/', function () {
+    require_once BASE_PATH . 'src/pages/home.page.php';
+});
 // Iniciar la aplicación FlightPHP
 Flight::start();
