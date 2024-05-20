@@ -5,17 +5,9 @@ declare(strict_types=1);
 define('BASE_PATH', __DIR__ . '/');
 
 require_once BASE_PATH . 'vendor/autoload.php';
+require_once BASE_PATH . 'config.php';
 
-use Dotenv\Dotenv;
-
-$env = $_ENV['APP_ENV'] ?: 'production';
-
-if ($env === 'development') {
-    $dotenv = Dotenv::createImmutable(BASE_PATH);
-    $dotenv->load();
-}
-
-
+// ORM
 require_once BASE_PATH . 'src/orm/bootstrap.php';
 
 // Routes
